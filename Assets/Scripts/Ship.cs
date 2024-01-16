@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
+using UnityEngine.Events;
 
 /// <summary>
 /// sHIP GAME BUILDING PART 1
 /// </summary>
-public class Ship : MonoBehaviour
+public class Ship : EventInvokerInt
 {
     //Adding bULLET
     [SerializeField]
@@ -21,11 +22,20 @@ public class Ship : MonoBehaviour
     Rigidbody2D R;
     //declaring const for rotate degree
     const float RotateDegreePerSecond = 180;
+
+    //health
+    int health = 3;
     // Start is called before the first frame update
     void Start()
     {
         R = GetComponent<Rigidbody2D>();
-
+        //adding event invokers for events
+        //game over
+        // Event.Add(EventName.GameOverEvent, new GameOverEvent());
+        // EventManager.AddInvoker(EventName.GameOverEvent, this);
+        //space ship dead
+        // Event.Add(EventName.DeadEvent, new DeadEvent());
+        // EventManager.AddInvoker(EventName.DeadEvent, this);
 
     }
 
@@ -55,6 +65,8 @@ public class Ship : MonoBehaviour
         //if left CTRL is pressed
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+            //play bullet shot sound
+            AudioManager.Play(AudioClipName.BulletShot);
 
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             //bullet.transform.position = transform.position;
@@ -82,6 +94,21 @@ public class Ship : MonoBehaviour
         Debug.Log("Collision detected with: " + col.gameObject.name);
         if (col.gameObject.CompareTag("Aestroid"))
         {
+            //play ship hit sound
+            AudioManager.Play(AudioClipName.ShipHit);
+            // Aestroid aestroid;
+            TakeDamage();
+        }
+    }
+
+    void TakeDamage()
+    {
+        health--;
+        //AudioManager.Play(AudioClipName.PlayerDamage);
+        if (health <= 0)
+        {
+            //Event[EventName.DeadEvent].Invoke(0);
+            //EventManager.AddInvoker(EventName.DeadEvent, 0);
             Destroy(gameObject);
         }
     }

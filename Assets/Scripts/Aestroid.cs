@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.Events;
+//using static EventName;
 
 /// <summary>
 /// Aestroid spawining script
@@ -14,11 +16,11 @@ public class Aestroid : MonoBehaviour
     Sprite Aestroid_2;
     [SerializeField]
     Sprite Aestroid_3;
-    // Start is called before the first frame update
-    void Start()
-    {
+    
+    void Start(){
         
     }
+
 
     public void Initialize(Direction dir, Vector3 pos)
     {
@@ -67,8 +69,15 @@ public class Aestroid : MonoBehaviour
     {
         
          Debug.Log("Collision detected with: " + coll.gameObject.name);
-        if (coll.gameObject.CompareTag("Bullet"))
+        if (coll.gameObject.CompareTag("Bullet") || coll.gameObject.CompareTag("Ship"))
         {
+            // play asteroid hit sound
+            AudioManager.Play(AudioClipName.AsteroidHit);
+            // destroy bullet
+            if (coll.gameObject.CompareTag("Bullet")){
+                Destroy(coll.gameObject);
+            }
+            
             // destroy or split as appropriate
             if (transform.localScale.x < 0.5f)
             {
