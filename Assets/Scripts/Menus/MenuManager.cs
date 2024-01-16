@@ -22,8 +22,9 @@ public static class MenuManager
                 }
                 Object.Instantiate(Resources.Load("HighScoreMenu"));
                 break;
-            case MenuName.Main:
-                SceneManager.LoadScene("MainMenu");
+            case MenuName.Gameplay:
+                Debug.Log("Play button clicked");
+                SceneManager.LoadScene("Gameplay");
                 break;
             case MenuName.Pause:
                 //instantiates the pause menu prefab at the moment

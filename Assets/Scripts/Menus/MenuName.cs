@@ -7,6 +7,6 @@ using UnityEngine;
 public enum MenuName
 {
     HighScore,
-    Main,
+    Gameplay,
     Pause
 }

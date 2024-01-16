@@ -38,6 +38,6 @@ public class HighScoreMenu : MonoBehaviour
         //AudioManager.Play(AudioClipName.Click);
 
         Time.timeScale = 1; //unfreeze the game
-        MenuManager.GoToMenu(MenuName.Main);
+        MenuManager.GoToMenu(MenuName.Gameplay);
     }
 }

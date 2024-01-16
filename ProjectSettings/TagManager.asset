@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Aestroid
   - Bullet
+  - Ship
   layers:
   - Default
   - TransparentFX

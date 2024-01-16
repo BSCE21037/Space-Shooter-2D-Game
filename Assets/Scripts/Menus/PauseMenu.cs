@@ -26,7 +26,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1; //unfreeze the game
         Destroy(gameObject);
-        MenuManager.GoToMenu(MenuName.Main);
+        MenuManager.GoToMenu(MenuName.Gameplay);
     }
 
 
