@@ -75,7 +75,15 @@ public class Aestroid : MonoBehaviour
             AudioManager.Play(AudioClipName.AsteroidHit);
             // destroy bullet
             if (coll.gameObject.CompareTag("Bullet")){
+                HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+                hud.UpdateScore(10);
                 Destroy(coll.gameObject);
+            }
+
+            if (coll.gameObject.CompareTag("Ship"))
+            {
+                HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+                hud.UpdateScore(-5);
             }
             
             // destroy or split as appropriate

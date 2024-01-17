@@ -8,7 +8,7 @@ using UnityEngine.Events;
 /// <summary>
 /// sHIP GAME BUILDING PART 1
 /// </summary>
-public class Ship : EventInvokerInt
+public class Ship : MonoBehaviour
 {
     //Adding bULLET
     [SerializeField]
@@ -104,6 +104,8 @@ public class Ship : EventInvokerInt
     void TakeDamage()
     {
         health--;
+        HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
+        hud.UpdateLives(health);
         //AudioManager.Play(AudioClipName.PlayerDamage);
         if (health <= 0)
         {

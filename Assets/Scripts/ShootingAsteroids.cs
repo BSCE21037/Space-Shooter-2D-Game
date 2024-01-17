@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Game Manager
 /// </summary>
-public class ShootingAsteroids : EventInvokerInt
+public class ShootingAsteroids : MonoBehaviour
 {
 
     #region Fields
@@ -22,7 +23,7 @@ public class ShootingAsteroids : EventInvokerInt
     void Start()
     {
         //add this invoker to the dictionary
-        EventManager.AddListener(EventName.GameOverEvent, HandleGameOverEvent);
+        //EventManager.AddListener(EventName.GameOverEvent, HandleGameOverEvent);
     }
 
     // Update is called once per frame

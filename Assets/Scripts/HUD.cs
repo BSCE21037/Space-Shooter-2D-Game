@@ -28,20 +28,17 @@ public class HUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EventManager.AddListener(EventName.PointsAddedEvent, UpdateScore);
-        EventManager.AddListener(EventName.DeadEvent, UpdateLives);
         scoreText.text = "Score: " + score;
         livesText.text = "Lives: " + lives;
-
     }
 
-    private void UpdateScore(int points)
+    public void UpdateScore(int points)
     {
         score += points;
         scoreText.text = "Score: " + score;
     }
 
-    private void UpdateLives(int lives)
+    public void UpdateLives(int lives)
     {
         this.lives = lives;
         livesText.text = "Lives: " + lives;

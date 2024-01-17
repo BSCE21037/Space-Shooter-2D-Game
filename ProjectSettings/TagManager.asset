@@ -7,6 +7,7 @@ TagManager:
   - Aestroid
   - Bullet
   - Ship
+  - HUD
   layers:
   - Default
   - TransparentFX
