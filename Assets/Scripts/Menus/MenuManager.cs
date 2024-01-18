@@ -20,7 +20,7 @@ public static class MenuManager
                 {
                     mmc.SetActive(false);
                 }
-                Object.Instantiate(Resources.Load("HighScoreMenu"));
+                SceneManager.LoadScene("HighScoreMenu");
                 break;
             case MenuName.Gameplay:
                 //close the main menu scene before opening the gameplay scene
@@ -34,15 +34,12 @@ public static class MenuManager
                 }
                 //Fix: Display 1 No Cameras Rendering
                 SceneManager.LoadScene("Gameplay");
-                //load another camera
-                //SceneManager.LoadScene("Gameplay", LoadSceneMode.Additive);
-                // SceneManager.SetActiveScene(SceneManager.GetSceneByName("Gameplay"));
-
-                //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Gameplay"));
                 break;
             case MenuName.Pause:
                 //instantiates the pause menu prefab at the moment
-                Object.Instantiate(Resources.Load("PauseMenu"));
+                //pause the time
+                //Time.timeScale = 0;
+                SceneManager.LoadScene("PauseMenu");
                 break;
         }
     }   

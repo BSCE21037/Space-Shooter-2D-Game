@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// sHIP GAME BUILDING PART 1
@@ -112,6 +113,7 @@ public class Ship : MonoBehaviour
             //Event[EventName.DeadEvent].Invoke(0);
             //EventManager.AddInvoker(EventName.DeadEvent, 0);
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

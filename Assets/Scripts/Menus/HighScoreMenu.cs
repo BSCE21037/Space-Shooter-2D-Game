@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// gets and displays the high score
@@ -35,9 +36,9 @@ public class HighScoreMenu : MonoBehaviour
     // Update is called once per frame
     public void HandleQuitButtonOnClickEvent()
     {
-        //AudioManager.Play(AudioClipName.Click);
+        AudioManager.Play(AudioClipName.MenuButtonClick);
 
         Time.timeScale = 1; //unfreeze the game
-        MenuManager.GoToMenu(MenuName.Gameplay);
+        SceneManager.LoadScene("MainMenu");
     }
 }
