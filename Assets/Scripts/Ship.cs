@@ -37,6 +37,27 @@ public class Ship : MonoBehaviour
         //space ship dead
         // Event.Add(EventName.DeadEvent, new DeadEvent());
         // EventManager.AddInvoker(EventName.DeadEvent, this);
+        if(StartSceneScript.FirstTimeGame == 0)
+        {
+            //if yes then set the first time game to 1
+            StartSceneScript.FirstTimeGame = 1;
+            //Load Welcom to game canvas
+            GameObject welcomeCanvas = GameObject.FindGameObjectWithTag("GameplayCanvas");
+            welcomeCanvas.SetActive(true);
+            //Do not load HUD
+            GameObject HUD = GameObject.FindGameObjectWithTag("HUD");
+            HUD.SetActive(false);
+            
+            SceneManager.LoadScene("MainMenu");
+
+        }
+        if(StartSceneScript.FirstTimeGame == 1)
+        {
+            //do not load gameplay canvas
+            GameObject welcomeCanvas = GameObject.FindGameObjectWithTag("GameplayCanvas");
+            welcomeCanvas.SetActive(false);
+
+        }
 
     }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 //using static EventName;
 
 /// <summary>
@@ -24,6 +26,8 @@ public class Aestroid : MonoBehaviour
 
     public void Initialize(Direction dir, Vector3 pos)
     {
+        //check if game running for the first time
+       
         // set asteroid position
         transform.position = pos;
         // apply impulse force to get game object moving
