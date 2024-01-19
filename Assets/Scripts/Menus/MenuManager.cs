@@ -15,12 +15,12 @@ public static class MenuManager
         {
             case MenuName.HighScore:
                 //close the main menu canvas before opening the high score menu
-                GameObject mmc = GameObject.Find("MainMenuCanvas");
-                if(mmc != null)
+                GameObject mainMenuCanvas = GameObject.Find("MainMenuCanvas");
+                if (mainMenuCanvas != null)
                 {
-                    mmc.SetActive(false);
+                    mainMenuCanvas.SetActive(false);
                 }
-                SceneManager.LoadScene("HighScoreMenu");
+                Object.Instantiate(Resources.Load("HighScoreMenu"));
                 break;
             case MenuName.Gameplay:
                 //close the main menu scene before opening the gameplay scene
@@ -34,6 +34,11 @@ public static class MenuManager
                 }
                 //Fix: Display 1 No Cameras Rendering
                 SceneManager.LoadScene("Gameplay");
+                break;
+            case MenuName.Main:
+
+                // go to MainMenu scene
+                SceneManager.LoadScene("MainMenu");
                 break;
             case MenuName.Pause:
                 //instantiates the pause menu prefab at the moment

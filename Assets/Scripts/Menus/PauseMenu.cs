@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleResumeButtonOnClickEvent()
     {
-        //AudioManager.Play(AudioClipName.Click);
+        AudioManager.Play(AudioClipName.MenuButtonClick);
 
         Time.timeScale = 1; //unfreeze the game
         SceneManager.UnloadSceneAsync("PauseMenu");
@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     public void HandleQuitButtonOnClickEvent()
     {
-        //AudioManager.Play(AudioClipName.Click);
+        AudioManager.Play(AudioClipName.MenuButtonClick);
 
         Time.timeScale = 1; //unfreeze the game
         Destroy(gameObject);

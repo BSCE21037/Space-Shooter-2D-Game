@@ -32,6 +32,11 @@ public class HUD : MonoBehaviour
         livesText.text = "Lives: " + lives;
     }
 
+    public int Score
+    {
+		get { return score; }
+	}
+
     public void UpdateScore(int points)
     {
         score += points;

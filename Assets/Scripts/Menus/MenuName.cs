@@ -8,5 +8,6 @@ public enum MenuName
 {
     HighScore,
     Gameplay,
+    Main,
     Pause
 }

@@ -39,6 +39,6 @@ public class HighScoreMenu : MonoBehaviour
         AudioManager.Play(AudioClipName.MenuButtonClick);
 
         Time.timeScale = 1; //unfreeze the game
-        SceneManager.LoadScene("MainMenu");
+        MenuManager.GoToMenu(MenuName.Main);
     }
 }

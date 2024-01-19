@@ -128,13 +128,20 @@ public class Ship : MonoBehaviour
         health--;
         HUD hud = GameObject.FindGameObjectWithTag("HUD").GetComponent<HUD>();
         hud.UpdateLives(health);
+        int point = hud.Score;
+        Debug.Log("Score: " + point);
+        //ShootingAsteroids sa = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShootingAsteroids>();
+        
         //AudioManager.Play(AudioClipName.PlayerDamage);
         if (health <= 0)
         {
             //Event[EventName.DeadEvent].Invoke(0);
             //EventManager.AddInvoker(EventName.DeadEvent, 0);
             Destroy(gameObject);
-            SceneManager.LoadScene("GameOver");
+            ShootingAsteroids sa = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShootingAsteroids>();
+            sa.HandleGameOverEvent(point);
+            
+            //SceneManager.LoadScene("GameOver");
         }
     }
 
