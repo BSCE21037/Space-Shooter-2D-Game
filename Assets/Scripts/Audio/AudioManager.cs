@@ -38,6 +38,8 @@ public static class AudioManager
              Resources.Load<AudioClip>("ButtonClick"));
         audioClips.Add(AudioClipName.PauseGame,
              Resources.Load<AudioClip>("pop"));
+        audioClips.Add(AudioClipName.GameOver,
+            Resources.Load<AudioClip>("GameOver"));
     }
 
     /// <summary>

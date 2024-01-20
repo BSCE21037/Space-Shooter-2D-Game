@@ -31,6 +31,19 @@ public class HighScoreMenu : MonoBehaviour
         {
             textMessage.text = "Looks like you haven't played yet!";
         }
+
+        if(ShootingAsteroids.image == 0)
+        {
+            //do not load the background image
+            GameObject background = GameObject.FindGameObjectWithTag("Background");
+            background.SetActive(false);
+        }
+        else{
+            //load the background image
+            GameObject background = GameObject.FindGameObjectWithTag("Background");
+            background.SetActive(true);
+            ShootingAsteroids.image = 0;
+        }
     }
 
     // Update is called once per frame

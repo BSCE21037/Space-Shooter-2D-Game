@@ -7,5 +7,6 @@ public enum AudioClipName
     ShipHit,
     AsteroidHit,
     MenuButtonClick,
+    GameOver,
     PauseGame
 }
