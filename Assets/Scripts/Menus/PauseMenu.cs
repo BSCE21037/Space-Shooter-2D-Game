@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    static public int pauseOn;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0; //freeze the game
-
+        pauseOn = 1;
     }
 
     public void HandleResumeButtonOnClickEvent()
@@ -18,7 +19,9 @@ public class PauseMenu : MonoBehaviour
         AudioManager.Play(AudioClipName.MenuButtonClick);
 
         Time.timeScale = 1; //unfreeze the game
-        SceneManager.UnloadSceneAsync("PauseMenu");
+        Destroy(gameObject);
+        pauseOn = 0;
+        //SceneManager.UnloadSceneAsync("PauseMenu");
     }
 
 
@@ -28,9 +31,7 @@ public class PauseMenu : MonoBehaviour
 
         Time.timeScale = 1; //unfreeze the game
         Destroy(gameObject);
+        pauseOn = 0;
         SceneManager.LoadScene("MainMenu");
     }
-
-
-    
 }

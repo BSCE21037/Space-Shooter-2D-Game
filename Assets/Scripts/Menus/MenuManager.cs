@@ -42,9 +42,8 @@ public static class MenuManager
                 break;
             case MenuName.Pause:
                 //instantiates the pause menu prefab at the moment
-                //pause the time
-                //Time.timeScale = 0;
-                SceneManager.LoadScene("PauseMenu");
+                Object.Instantiate(Resources.Load("PauseMenu"));
+
                 break;
         }
     }   

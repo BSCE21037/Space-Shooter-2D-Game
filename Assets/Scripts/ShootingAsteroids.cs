@@ -21,6 +21,8 @@ public class ShootingAsteroids : MonoBehaviour
 
     int currentScore;
 
+    //PauseMenu pM;
+
 
     #endregion
     // Start is called before the first frame update
@@ -41,13 +43,19 @@ public class ShootingAsteroids : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            //quit the game
-            MenuManager.GoToMenu(MenuName.Pause);
-            AudioManager.Play(AudioClipName.PauseGame);
+        if(PauseMenu.pauseOn == 0){
+            if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Gameplay")
+            {
+                //pauseOn = 1;
+                //quit the game
+                MenuManager.GoToMenu(MenuName.Pause);
+                AudioManager.Play(AudioClipName.PauseGame);
+                //pauseOn = 0;
+            }
+            //currentScore = hudScript.Score;
         }
-        //currentScore = hudScript.Score;
+        
+        
     }
 
     public void HandleGameOverEvent(int points)
@@ -71,9 +79,11 @@ public class ShootingAsteroids : MonoBehaviour
 		if (PlayerPrefs.HasKey("HighScore"))
         {
             Debug.Log("High Score already exists");
+            Debug.Log("Current Score: " + currentScore);
 			if (currentScore > PlayerPrefs.GetInt("HighScore"))
             {
-				PlayerPrefs.SetInt("High Score", currentScore);
+                Debug.Log("New High Score");
+				PlayerPrefs.SetInt("HighScore", currentScore);
                 PlayerPrefs.Save();
 			}
 		}
