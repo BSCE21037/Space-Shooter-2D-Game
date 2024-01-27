@@ -6,4 +6,6 @@ This repository consists of two folders:
 
 2)**space_shooter_project_files**: This folder contains all project files except for Library(due to greater file size). In order to run this project, create a new Unity 2D project. Then paste these files in your new created project files. [Incase of Untitled Scene, go to Scenes folder and open the Gameplay Scene] .
 
+**NOTE: I do not own any assets or audio sources used in the game, as the main objective of this project was learning Unity.**
+
 Unity Version: 2022.3.16f1
