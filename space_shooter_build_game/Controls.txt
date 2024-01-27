@@ -1,0 +1,5 @@
+Spaceship rotation  - ArrowKeys
+Move Spaceship      - Spacebar
+Shooting            - LCtrl
+Pause               - Esc
+Button selection    - LMB
