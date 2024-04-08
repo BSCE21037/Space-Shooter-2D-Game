@@ -1,7 +1,5 @@
 # SPACE_SHOOTER_2D_GAME
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7156354690417344512?compact=1" height="399" width="710" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
-
 This repository consists of two folders:
 
 1)**space_shooter_build_game**: This folder contains the built game for this project. Simply run the 'Asteroids.exe' file to start the game. When running the game for the first time, Windows might display a message stating 'Windows Protected Your PC.' Click on 'More Info,' which indicates that this message is due to an **Unknown Publisher**, and then click on 'Run Anyway' to proceed. Check out Controls.txt for the gameplay controls.
